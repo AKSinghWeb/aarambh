@@ -62,7 +62,7 @@ const HomePage = () => {
                 the following details:
               </p>
               <p>
-                Phone: <strong>+91-8130233308</strong>
+                Phone: <strong>+91-8287181002</strong>
               </p>
               <p>
                 Email:{' '}
@@ -261,7 +261,7 @@ const HomePage = () => {
               following details:
             </p>
             <p className="">
-              Phone: <strong>+91-8130233308</strong>
+              Phone: <strong>+91-8287181002</strong>
             </p>
             <p className="">
               Email: <strong>aarambh.bh@gmail.com</strong>
