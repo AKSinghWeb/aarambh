@@ -1,0 +1,38 @@
+.hero-section {
+    background-image: url('./assets/img3.jpeg');
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    /* width: 100%; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    text-align: center;
+    position: relative;
+    top: 0;
+}
+
+.hero-section::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.3);
+    /* z-index: 1; */
+}
+
+.navbar {
+    background-color: rgba(0, 0, 0, 0.3);
+
+}
+
+* {
+    font-family: "Josefin Slab", serif;
+  font-optical-sizing: auto;
+  font-weight: 300;
+  font-style: normal;
+}
+  
