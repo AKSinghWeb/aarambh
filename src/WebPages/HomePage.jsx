@@ -26,15 +26,58 @@ const HomePage = () => {
           <div className="flex justify-center pb-8">
             <img src={Logo} className="w-[120px]" alt="" />
           </div>
-          <p className="text-2xl max-md:pb-5 z-[2] font-semibold max-md:text-lg relative">
+          <p className="text-5xl max-md:pb-5 z-[2] font-bold max-md:text-2xl relative">
             WELCOME TO
           </p>
-          <p className="text-[100px] font-semibold max-md:pb-5 max-md:text-5xl z-[2] relative tracking-widest">
+          <p className="text-[150px] font-bold max-md:font-extrabold max-md:pb-5 max-md:text-5xl z-[2] relative tracking-widest">
             AARAMBH
           </p>
-          <p className="lg:text-4xl max-md:text-xl font-bold text-end lg:mt-[-25px]">
+          <p className="lg:text-6xl max-md:text-xl font-extrabold text-end lg:mt-[-25px]">
             Hotel and Banquet
           </p>
+        </div>
+      </div>
+
+      <span id="book"></span>
+      {/* Book Section with how to book by contacting or visiting*/}
+      <div
+        data-aos="fade-up"
+        className="lg:py-20 mt-20 max-md:py-10 bg-light lg:mx-32 rounded-xl"
+      >
+        <div className="p-10 flex justify-center max-md:flex-col items-center flex-col">
+          <p className="text-4xl">Book Your Event</p>
+          <div className="flex justify-center w-full py-4">
+            <div className="h-[0.5px] bg-primary w-[40%] lg:w-[10%]"></div>
+          </div>
+        </div>
+        <div className="lg:px-24 px-10 grid lg:grid-cols-2 gap-y-14 gap-10">
+          <div className="flex items-center">
+            <div>
+              <p className="text-3xl font-bold pb-2 text-primary">Contact Us</p>
+              <p>
+                For any queries or bookings, please feel free to contact us at
+                the following details:
+              </p>
+              <p>
+                Phone: <strong>+91-8130233308</strong>
+              </p>
+              <p>
+                Email:{' '}
+                <a href="mailto:aarambh.bh@gmail.com">
+                  <strong>aarambh.bh@gmail.com</strong>
+                </a>
+              </p>
+            </div>
+          </div>
+          <div className="flex items-center">
+            <div>
+              <p className="text-3xl font-bold pb-2 text-primary">Visit Us</p>
+              <p>
+                Plot No. - 362, Milak Lachchhi, Greater Noida, Milak Lachhi,
+                Uttar Pradesh 203207
+              </p>
+            </div>
+          </div>
         </div>
       </div>
 

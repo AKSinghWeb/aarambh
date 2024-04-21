@@ -50,8 +50,8 @@ const Navbar = () => {
         ref={headerRef}
         className={`fixed flex lg:px-32 top-0 z-50 w-full  ${
           window.scrollY === 0
-            ? 'bg-transparent'
-            : 'backdrop-blur-lg bg-[rgba(0,0,0,0.5)]'
+            ? 'bg-blur-none bg-[rgba(0,0,0,0.6)]'
+            : 'backdrop-blur-lg bg-[rgba(0,0,0,0.8)]'
         }  py-3 px-4 items-center justify-between transition-all duration-300 ease-in-out ${
           visible ? '' : 'opacity-0 transform translate-y-[-100%]'
         }`}
@@ -65,13 +65,20 @@ const Navbar = () => {
           <img src={Logo} className="w-[70px]" alt="" />
         </div>
         <div className="flex max-sm:hidden justify-center gap-7 text-2xl font-extrabold text-primary">
-          <div
+          {/* <div
             onClick={() => {
               window.scrollTo({ top: 0, behavior: 'smooth' })
             }}
             className=" group cursor-pointer"
           >
             <p className="font-bold">Home</p>
+            <div className="group-hover:w-full bg-primary w-0 transition-all duration-400 h-[1px]"></div>
+          </div> */}
+          <div
+            onClick={() => scrollToSection('book')}
+            className="group cursor-pointer"
+          >
+            <p className="font-bold">Book</p>
             <div className="group-hover:w-full bg-primary w-0 transition-all duration-400 h-[1px]"></div>
           </div>
           <div
@@ -141,7 +148,7 @@ const Navbar = () => {
               className="md:hidden nav-menu absolute top-[50px] right-[10px] ml-44 border border-white text-white p-7 py-3 mr-10 bg-black"
               // ref={menuRef}
             >
-              <div
+              {/* <div
                 onClick={() => {
                   window.scrollTo({ top: 0, behavior: 'smooth' })
                   setIsOpen(false)
@@ -150,7 +157,7 @@ const Navbar = () => {
               >
                 <p className="font-bold">Home</p>
                 <div className="group-hover:w-full bg-primary w-0 transition-all duration-400 h-[1px]"></div>
-              </div>
+              </div> */}
               <div
                 onClick={() => {
                   scrollToSection('service')
@@ -159,6 +166,16 @@ const Navbar = () => {
                 className="group cursor-pointer"
               >
                 <p className="font-bold">Service</p>
+                <div className="group-hover:w-full bg-primary w-0 transition-all duration-400 h-[1px]"></div>
+              </div>
+              <div
+                onClick={() => {
+                  scrollToSection('book')
+                  setIsOpen(false)
+                }}
+                className="group cursor-pointer"
+              >
+                <p className="font-bold">Book</p>
                 <div className="group-hover:w-full bg-primary w-0 transition-all duration-400 h-[1px]"></div>
               </div>
               <div
