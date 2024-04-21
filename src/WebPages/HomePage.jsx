@@ -29,10 +29,13 @@ const HomePage = () => {
           <p className="text-5xl max-md:pb-5 z-[2] font-bold max-md:text-2xl relative">
             WELCOME TO
           </p>
-          <p className="text-[150px] font-bold max-md:font-extrabold max-md:pb-5 max-md:text-5xl z-[2] relative tracking-widest">
+          <p className="text-[150px] font-[Alegreya] font-bold max-md:font-extrabold max-md:pb-5 max-md:text-5xl z-[2] relative tracking-widest">
             AARAMBH
           </p>
-          <p className="lg:text-6xl max-md:text-xl font-extrabold text-end lg:mt-[-25px]">
+          <p
+            style={{ fontFamily: 'Gilda Display' }}
+            className="lg:text-6xl max-md:text-xl font-extrabold text-end lg:mt-[-25px]"
+          >
             Hotel and Banquet
           </p>
         </div>

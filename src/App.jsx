@@ -18,7 +18,7 @@ const App = () => {
         {/* Book event tooltip along with animation */}
         <div
           onClick={() => {
-            window.open('https://wa.me/918130233308', '_blank')
+            window.open('https://wa.me/918287181002', '_blank')
           }}
           className="fixed cursor-pointer bottom-10 right-10"
         >
