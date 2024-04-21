@@ -23,7 +23,7 @@ const HomePage = () => {
       {/* Hero Section  */}
       <div className="hero-section">
         <div className="relative z-[2] text-primary border-primary border max-md:p-5 lg:p-5 lg:px-24">
-          <div className='flex justify-center pb-8'>
+          <div className="flex justify-center pb-8">
             <img src={Logo} className="w-[120px]" alt="" />
           </div>
           <p className="text-2xl max-md:pb-5 z-[2] font-semibold max-md:text-lg relative">
@@ -39,7 +39,7 @@ const HomePage = () => {
       </div>
 
       {/* Welcome Section */}
-      <div  data-aos="fade-up">
+      <div data-aos="fade-up">
         <div className="lg:p-24 max-md:p-6 max-md:py-28 flex justify-center items-center flex-col">
           <p className="uppercase max-md:text-center text-4xl">
             welcome to aarambh
@@ -61,9 +61,9 @@ const HomePage = () => {
         </div>
       </div>
 
-<span id='service' ></span>
+      <span id="service"></span>
       {/* Services Section */}
-      <div  data-aos="fade-up">
+      <div data-aos="fade-up">
         <div className="p-10 lg:bg-light rounded-t-[50px] lg:mx-[370px] flex max-md:flex-col justify-center items-center flex-col">
           <p className="text-4xl">Our Services</p>
           <div className="flex lg:justify-center w-full py-4">
@@ -88,7 +88,7 @@ const HomePage = () => {
           />
           <EventCard
             img={Img3}
-            title={'Miscellaneous'}
+            title={'Miscellaneous Events'}
             desc={
               'Another year gone, a new chapter begins. Whether you are celebrating a sweet 16 or a 50th birthday we know exactly how to accommodate such events. Your guests will feel at home with the warm treatment of our servers and the many food options available. Have a blast this is your day to let go and have fun with friends and family. One thing is a given, that you will make memories and remember this for the rest of your life. See our previous birthday parties below and how others have made Aurora the venue of their choice.'
             }
@@ -96,8 +96,7 @@ const HomePage = () => {
         </div>
       </div>
 
-
-      <span id='highlight' ></span>
+      <span id="highlight"></span>
       {/* Hotel Facilities  */}
       <div
         data-aos="fade-up"
@@ -149,7 +148,7 @@ const HomePage = () => {
         </div>
       </div>
 
-      <span id='gallery' ></span>
+      <span id="gallery"></span>
       {/* Gallery Section */}
       <div data-aos="fade-up" className="lg:py-20 max-md:py-10">
         <div className="pt-16 flex justify-center items-center flex-col">
@@ -200,7 +199,7 @@ const HomePage = () => {
         </div>
       </div>
 
-      <span id='contact' ></span>
+      <span id="contact"></span>
       <div data-aos="fade-up" className="pb-10 max-md:py-20">
         <div className="lg:pb-10 flex justify-center max-md:flex-col items-center flex-col">
           <p className="text-4xl">Get in Touch</p>
