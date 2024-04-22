@@ -29,7 +29,7 @@ const HomePage = () => {
           <p className="text-5xl max-md:pb-5 z-[2] font-bold max-md:text-2xl relative">
             WELCOME TO
           </p>
-          <p className="text-[150px] font-[Alegreya] font-bold max-md:font-extrabold max-md:pb-5 max-md:text-5xl z-[2] relative tracking-widest">
+          <p className="text-[150px] md:text-[110px] md:p-7 font-[Alegreya] font-bold max-md:font-extrabold max-md:pb-5 max-md:text-5xl z-[2] relative tracking-widest">
             AARAMBH
           </p>
           <p
@@ -45,7 +45,7 @@ const HomePage = () => {
       {/* Book Section with how to book by contacting or visiting*/}
       <div
         data-aos="fade-up"
-        className="lg:py-20 mt-20 max-md:py-10 bg-light lg:mx-32 rounded-xl"
+        className="lg:py-20 my-20 max-lg:py-10 bg-light lg:mx-32 rounded-xl"
       >
         <div className="p-10 flex justify-center max-md:flex-col items-center flex-col">
           <p className="text-4xl">Book Your Event</p>
@@ -86,7 +86,7 @@ const HomePage = () => {
 
       {/* Welcome Section */}
       <div data-aos="fade-up">
-        <div className="lg:p-24 max-md:p-6 max-md:py-28 flex justify-center items-center flex-col">
+        <div className="lg:p-24 max-lg:p-6 md:px-14 max-lg:py-28 flex justify-center items-center flex-col">
           <p className="uppercase max-md:text-center text-4xl">
             welcome to aarambh
           </p>
@@ -116,7 +116,7 @@ const HomePage = () => {
             <div className="h-[0.5px] bg-primary w-full lg:w-[12%]"></div>
           </div>
         </div>
-        <div className="flex flex-col gap-14">
+        <div className="flex flex-col md:px-10 gap-14">
           <EventCard
             img={Img1}
             title={'Weddings'}
@@ -154,7 +154,7 @@ const HomePage = () => {
             <div className="h-[0.5px] bg-primary w-[40%] lg:w-[10%]"></div>
           </div>
         </div>
-        <div className="lg:px-24 px-10 grid lg:grid-cols-2 gap-y-14 gap-10">
+        <div className="lg:px-24 md:px-20 px-10 grid lg:grid-cols-2 gap-y-14 gap-10">
           <Facility
             title={'Free Parking Space'}
             desc={
@@ -196,7 +196,7 @@ const HomePage = () => {
 
       <span id="gallery"></span>
       {/* Gallery Section */}
-      <div data-aos="fade-up" className="lg:py-20 max-md:py-10">
+      <div data-aos="fade-up" className="lg:py-20 md:px-10 max-lg:py-10">
         <div className="pt-16 flex justify-center items-center flex-col">
           <p className="text-4xl">Photo Gallery</p>
           <div className="flex justify-center w-full py-4">
@@ -246,17 +246,17 @@ const HomePage = () => {
       </div>
 
       <span id="contact"></span>
-      <div data-aos="fade-up" className="pb-10 max-md:py-20">
+      <div data-aos="fade-up" className="pb-10 md:px-12 max-lg:py-20">
         <div className="lg:pb-10 flex justify-center max-md:flex-col items-center flex-col">
           <p className="text-4xl">Get in Touch</p>
           <div className="flex justify-center w-full py-3 lg:py-4">
             <div className="h-[0.5px] bg-primary w-[40%] lg:w-[12%]"></div>
           </div>
         </div>
-        <div className="flex max-md:flex-col gap-14 lg:px-32 w-full">
-          <div className="flex lg:w-[60%] max-md:px-5 justify-center max-md:items-center flex-col gap-5">
+        <div className="flex max-lg:flex-col gap-14 lg:px-32 w-full">
+          <div className="flex lg:w-[60%] max-md:px-5 justify-center max-lg:items-center flex-col gap-5">
             <p className="text-3xl max-md:pt-10">Address</p>
-            <p className="max-md:text-center">
+            <p className="max-lg:text-center">
               For any queries or bookings, please feel free to contact us at the
               following details:
             </p>
@@ -307,7 +307,7 @@ const EventCard = ({ side, title, desc, img }) => {
       data-aos="fade-up"
       className={`flex ${
         side && 'flex-row-reverse'
-      } lg:p-10 max-md:flex-col gap-32 max-md:gap-5 lg:px-32 justify-center items-center`}
+      } lg:p-10 max-md:flex-col md:gap-10 gap-32 max-md:gap-5 lg:px-32 justify-center items-center`}
     >
       <div>
         <p className="text-5xl max-md:text-center py-1 text-primary">{title}</p>

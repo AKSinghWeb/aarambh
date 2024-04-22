@@ -52,7 +52,7 @@ const Navbar = () => {
           window.scrollY === 0
             ? 'bg-blur-none bg-[rgba(0,0,0,0.6)]'
             : 'backdrop-blur-lg bg-[rgba(0,0,0,0.8)]'
-        }  py-3 px-4 items-center justify-between transition-all duration-300 ease-in-out ${
+        }  py-3 px-4 md:px-16 items-center justify-between transition-all duration-300 ease-in-out ${
           visible ? '' : 'opacity-0 transform translate-y-[-100%]'
         }`}
       >
