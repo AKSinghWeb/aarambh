@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react'
 import '../App.css'
-import Logo from '../assets/logo2.png'
+import Logo from '../assets/logo.png'
 const Navbar = () => {
   const [visible, setVisible] = useState(true)
   const headerRef = useRef(null)
@@ -33,7 +33,6 @@ const Navbar = () => {
   }
 
   useEffect(() => {
-
     document.addEventListener('click', (e) => {
       if (e.target.closest('.nav-menu') || e.target.closest('.block')) {
         return
@@ -41,30 +40,40 @@ const Navbar = () => {
         setIsOpen(false)
       }
     })
-
   }, [])
 
   return (
     <>
       <div
         ref={headerRef}
-        className={`fixed flex lg:px-32 top-0 z-50 w-full  ${
-          window.scrollY === 0
-            ? 'bg-blur-none bg-[rgba(0,0,0,0.6)]'
-            : 'backdrop-blur-lg bg-[rgba(0,0,0,0.8)]'
-        }  py-3 px-4 md:px-16 items-center justify-between transition-all duration-300 ease-in-out ${
+        className={`relative flex lg:px-32 top-0 w-full p-1 bg-[#685044] px-4 md:px-16 items-center justify-between transition-all duration-300 ease-in-out ${
           visible ? '' : 'opacity-0 transform translate-y-[-100%]'
         }`}
       >
+        <div className="pattern"></div>
         <div
-          className="cursor-pointer"
+          className="cursor-pointer z-10 flex items-center gap-3"
           onClick={() => {
             window.scrollTo({ top: 0, behavior: 'smooth' })
           }}
         >
-          <img src={Logo} className="w-[70px]" alt="" />
+          <img src={Logo} className="w-[50px] md:mr-2" alt="" />
+          <div>
+            <p className="text-[#f8be7e] font-[Alegreya] text-xl md:text-2xl font-extrabold">
+              Aarambh
+            </p>
+            <p
+              style={{ fontFamily: 'Gilda Display' }}
+              className="text-[#f8be7e] text-md md:text-md font-extrabold"
+            >
+              Hotel & Banquet{' '}
+            </p>
+          </div>
         </div>
-        <div className="flex max-sm:hidden justify-center gap-7 text-2xl font-extrabold text-primary">
+        <div
+          style={{ fontFamily: 'Playfair Display' }}
+          className="flex z-10 max-sm:hidden justify-center gap-7 text-lg font-extrabold text-primary"
+        >
           {/* <div
             onClick={() => {
               window.scrollTo({ top: 0, behavior: 'smooth' })
@@ -78,39 +87,49 @@ const Navbar = () => {
             onClick={() => scrollToSection('book')}
             className="group cursor-pointer"
           >
-            <p className="font-bold">Book</p>
+            <p style={{ fontFamily: 'Playfair Display' }} className="font-bold">
+              Book
+            </p>
             <div className="group-hover:w-full bg-primary w-0 transition-all duration-400 h-[1px]"></div>
           </div>
           <div
             onClick={() => scrollToSection('service')}
             className="group cursor-pointer"
           >
-            <p className="font-bold">Service</p>
+            <p className="font-bold" style={{ fontFamily: 'Playfair Display' }}>
+              Services
+            </p>
             <div className="group-hover:w-full bg-primary w-0 transition-all duration-400 h-[1px]"></div>
           </div>
           <div
             onClick={() => scrollToSection('highlight')}
             className="group cursor-pointer"
           >
-            <p className="font-bold">Highlights</p>
+            <p className="font-bold" style={{ fontFamily: 'Playfair Display' }}>
+              Highlights
+            </p>
             <div className="group-hover:w-full bg-primary w-0 transition-all duration-400 h-[1px]"></div>
           </div>
           <div
             onClick={() => scrollToSection('gallery')}
             className="group cursor-pointer"
           >
-            <p className="font-bold">Gallery</p>
+            <p className="font-bold" style={{ fontFamily: 'Playfair Display' }}>
+              Gallery
+            </p>
             <div className="group-hover:w-full bg-primary w-0 transition-all duration-400 h-[1px]"></div>
           </div>
           <div
             onClick={() => scrollToSection('contact')}
             className="group cursor-pointer"
           >
-            <p className="font-bold">Contact</p>
+            <p className="font-bold" style={{ fontFamily: 'Playfair Display' }}>
+              Contact
+            </p>
             <div className="group-hover:w-full bg-primary w-0 transition-all duration-400 h-[1px]"></div>
           </div>
         </div>
-        <div className="block md:hidden">
+        <div className="block z-10 md:hidden">
           {/* Mobile menu button */}
           {IsOpen ? (
             <svg
@@ -165,7 +184,12 @@ const Navbar = () => {
                 }}
                 className="group cursor-pointer"
               >
-                <p className="font-bold">Service</p>
+                <p
+                  className="font-bold"
+                  style={{ fontFamily: 'Playfair Display' }}
+                >
+                  Services
+                </p>
                 <div className="group-hover:w-full bg-primary w-0 transition-all duration-400 h-[1px]"></div>
               </div>
               <div
@@ -175,7 +199,12 @@ const Navbar = () => {
                 }}
                 className="group cursor-pointer"
               >
-                <p className="font-bold">Book</p>
+                <p
+                  className="font-bold"
+                  style={{ fontFamily: 'Playfair Display' }}
+                >
+                  Book
+                </p>
                 <div className="group-hover:w-full bg-primary w-0 transition-all duration-400 h-[1px]"></div>
               </div>
               <div
@@ -185,7 +214,12 @@ const Navbar = () => {
                 }}
                 className="group cursor-pointer"
               >
-                <p className="font-bold">Highlights</p>
+                <p
+                  className="font-bold"
+                  style={{ fontFamily: 'Playfair Display' }}
+                >
+                  Highlights
+                </p>
                 <div className="group-hover:w-full bg-primary w-0 transition-all duration-400 h-[1px]"></div>
               </div>
               <div
@@ -195,7 +229,12 @@ const Navbar = () => {
                 }}
                 className="group cursor-pointer"
               >
-                <p className="font-bold">Gallery</p>
+                <p
+                  className="font-bold"
+                  style={{ fontFamily: 'Playfair Display' }}
+                >
+                  Gallery
+                </p>
                 <div className="group-hover:w-full bg-primary w-0 transition-all duration-400 h-[1px]"></div>
               </div>
               <div
@@ -205,7 +244,12 @@ const Navbar = () => {
                 }}
                 className="group cursor-pointer"
               >
-                <p className="font-bold">Contact</p>
+                <p
+                  className="font-bold"
+                  style={{ fontFamily: 'Playfair Display' }}
+                >
+                  Contact
+                </p>
                 <div className="group-hover:w-full bg-primary w-0 transition-all duration-400 h-[1px]"></div>
               </div>
             </div>

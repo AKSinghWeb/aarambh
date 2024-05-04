@@ -22,7 +22,7 @@ const App = () => {
           }}
           className="fixed cursor-pointer bottom-10 right-10"
         >
-          <div className="bg-[rgba(0,0,0,0.5)] text-white p-2 rounded-xl flex items-center justify-center animate-custom-scale">
+          <div className="bg-[rgba(61,61,63,0.4)] text-white p-2 rounded-xl flex items-center justify-center animate-custom-scale">
             <p className="text-lg text-primary font-bold mx-4">Book Event</p>
 
             {/* <div className="bg-slate-900 text-white p-2 rounded-full flex items-center justify-center"> */}

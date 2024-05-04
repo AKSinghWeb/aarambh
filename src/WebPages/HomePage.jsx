@@ -1,7 +1,7 @@
 import { useEffect } from 'react'
 import '../App.css'
 import Img1 from '../assets/img1.jpeg'
-import Logo from '../assets/logo.png'
+// import Logo from '../assets/logo.png'
 import Img2 from '../assets/img2.jpg'
 import Img3 from '../assets/img3.jpeg'
 import Img9 from '../assets/img9.jpeg'
@@ -22,22 +22,72 @@ const HomePage = () => {
     <div>
       {/* Hero Section  */}
       <div className="hero-section">
-        <div className="relative z-[2] text-primary border-primary border max-md:p-5 lg:p-5 lg:px-24">
-          <div className="flex justify-center pb-8">
-            <img src={Logo} className="w-[120px]" alt="" />
-          </div>
-          <p className="text-5xl max-md:pb-5 z-[2] font-bold max-md:text-2xl relative">
+        <div className="relative z-[2] text-primary border-primary rounded-md max-md:p-5 lg:p-24 lg:px-24">
+          {/* <div className="flex justify-center pb-8">
+            <img src={Logo} className="w-[80px]" alt="" />
+          </div> */}
+          <p className="text-4xl z-[2] font-[Alegreya] font-bold max-md:text-lg relative">
             WELCOME TO
           </p>
-          <p className="text-[150px] md:text-[110px] md:p-7 font-[Alegreya] font-bold max-md:font-extrabold max-md:pb-5 max-md:text-5xl z-[2] relative tracking-widest">
-            AARAMBH
+          <p className="text-[100px] md:text-[70px] md:pb-7 font-[Alegreya] font-bold max-md:font-extrabold max-md:pb-5 max-md:text-2xl z-[2] relative ">
+            AARAMBH Hotel & Banquet
           </p>
-          <p
+          {/* <p
             style={{ fontFamily: 'Gilda Display' }}
-            className="lg:text-6xl max-md:text-xl font-extrabold text-end lg:mt-[-25px]"
+            className="lg:text-4xl max-md:text-xl font-extrabold lg:mt-[-25px]"
           >
             Hotel and Banquet
-          </p>
+          </p> */}
+
+          {/* CTA Button */}
+          <div className="flex max-md:mt-12 justify-center gap-4 ">
+            <button
+              onClick={() => {
+                window.open('https://wa.me/918287181002', '_blank')
+              }}
+              className="bg-primary  w-[140px] md:w-40 flex justify-center items-center gap-2 border border-[#7f5741] text-[#7f5741] md:px-5 py-2 font-bold rounded-lg md:text-lg"
+            >
+              Call Now{' '}
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="3"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                className="lucide lucide-arrow-right"
+              >
+                <path d="M5 12h14" />
+                <path d="m12 5 7 7-7 7" />
+              </svg>
+            </button>
+            <button
+              onClick={() => {
+                window.open('https://wa.me/918287181002', '_blank')
+              }}
+              className="bg-[#7f5741] w-[140px] md:w-40 flex justify-center items-center gap-2 border border-primary text-primary md:px-5 py-2 font-bold rounded-lg md:text-lg"
+            >
+              Book Event
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="3"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                className="lucide lucide-arrow-right"
+              >
+                <path d="M5 12h14" />
+                <path d="m12 5 7 7-7 7" />
+              </svg>
+            </button>
+          </div>
         </div>
       </div>
 
