@@ -1,33 +1,44 @@
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import '../App.css'
-import Img1 from '../assets/img1.jpeg'
-// import Logo from '../assets/logo.png'
-import Img2 from '../assets/img2.jpg'
-import Img3 from '../assets/img3.jpeg'
+import Bar from '../assets/bar.png'
 import Img9 from '../assets/img9.jpeg'
 import Img7 from '../assets/img7.jpeg'
 import Img10 from '../assets/img10.jpeg'
 import Img4 from '../assets/img4.jpeg'
+import Img5 from '../assets/img5.jpeg'
 import Img11 from '../assets/img11.jpeg'
 import AOS from 'aos'
 import 'aos/dist/aos.css'
+import 'animate.css'
+import Hall1 from '../assets/hall1.png'
+import Hall2 from '../assets/hall2.png'
+import Hall3 from '../assets/hall3.png'
+import Terrace from '../assets/terrace.png'
+import Testimonials from '../Components/Testimonials'
+import Highlights from '../Components/Highlights'
+import BookEvent from '../Components/BookEvent'
+import CountUp from 'react-countup/'
+import ScrollTrigger from 'react-scroll-trigger'
 
 const HomePage = () => {
+  const [counterOn, setCounterOn] = useState(false)
+
   useEffect(() => {
     AOS.init({
       duration: 500,
     })
   }, [])
+
   return (
     <div>
       {/* Hero Section  */}
       <div className="hero-section">
-        <div className="relative z-[2] text-primary border-primary rounded-md max-md:p-5 lg:p-24 lg:px-24">
+        <div className="relative animate__animated animate__zoomIn z-[2] text-primary border-primary rounded-md max-md:p-5 lg:p-24 lg:px-24">
           {/* <div className="flex justify-center pb-8">
             <img src={Logo} className="w-[80px]" alt="" />
           </div> */}
           <p className="text-4xl z-[2] font-[Alegreya] font-bold max-md:text-lg relative">
-            WELCOME TO
+            Welcome &nbsp; To
           </p>
           <p className="text-[100px] md:text-[70px] md:pb-7 font-[Alegreya] font-bold max-md:font-extrabold max-md:pb-5 max-md:text-2xl z-[2] relative ">
             AARAMBH Hotel & Banquet
@@ -45,7 +56,7 @@ const HomePage = () => {
               onClick={() => {
                 window.open('https://wa.me/918287181002', '_blank')
               }}
-              className="bg-primary  w-[140px] md:w-40 flex justify-center items-center gap-2 border border-[#7f5741] text-[#7f5741] md:px-5 py-2 font-bold rounded-lg md:text-lg"
+              className="bg-primary max-md:text-xs hover:scale-[1.1] transition-all duration-300 w-[110px] md:w-40 flex justify-center items-center gap-2 border border-[#7f5741] text-[#7f5741] md:px-5 py-2 font-bold rounded-lg md:text-lg"
             >
               Call Now{' '}
               <svg
@@ -66,9 +77,11 @@ const HomePage = () => {
             </button>
             <button
               onClick={() => {
-                window.open('https://wa.me/918287181002', '_blank')
+                document.getElementById('book').scrollIntoView({
+                  behavior: 'smooth',
+                })
               }}
-              className="bg-[#7f5741] w-[140px] md:w-40 flex justify-center items-center gap-2 border border-primary text-primary md:px-5 py-2 font-bold rounded-lg md:text-lg"
+              className="bg-secondary max-md:text-xs hover:scale-[1.1] transition-all duration-300 w-[110px] md:w-40 flex justify-center items-center gap-2 border border-primary text-primary md:px-5 py-2 font-bold rounded-lg md:text-lg"
             >
               Book Event
               <svg
@@ -91,173 +104,168 @@ const HomePage = () => {
         </div>
       </div>
 
-      <span id="book"></span>
-      {/* Book Section with how to book by contacting or visiting*/}
-      <div
-        data-aos="fade-up"
-        className="lg:py-20 my-20 max-lg:py-10 bg-light lg:mx-32 rounded-xl"
-      >
-        <div className="p-10 flex justify-center max-md:flex-col items-center flex-col">
-          <p className="text-4xl">Book Your Event</p>
-          <div className="flex justify-center w-full py-4">
-            <div className="h-[0.5px] bg-primary w-[40%] lg:w-[10%]"></div>
+      {/* About Section */}
+      <div>
+        <div className="lg:p-28 p-7 py-10 pt-14">
+          <h2 className="text-center text-4xl lg:text-5xl text-secondary font-bold p-5">
+            About Aarambh
+          </h2>
+          <div className="flex justify-center">
+            <img src={Bar} className="md:w-[25%] w-[70%] -mt-3" alt="" />
           </div>
-        </div>
-        <div className="lg:px-24 px-10 grid lg:grid-cols-2 gap-y-14 gap-10">
-          <div className="flex items-center">
-            <div>
-              <p className="text-3xl font-bold pb-2 text-primary">Contact Us</p>
-              <p>
-                For any queries or bookings, please feel free to contact us at
-                the following details:
-              </p>
-              <p>
-                Phone: <strong>+91-8287181002</strong>
-              </p>
-              <p>
-                Email:{' '}
-                <a href="mailto:aarambh.bh@gmail.com">
-                  <strong>aarambh.bh@gmail.com</strong>
-                </a>
-              </p>
+          <p className="p-5 max-lg:text-justify text-center">
+            At Aarambh, contemporary luxury blends with ageless tradition. With
+            30 comfortable executive rooms, our location is a comfortable
+            retreat. Celebrate in style in our three adaptable banquet halls,
+            which can accommodate up to 2500 guests, as well as on our terrace.
+            Our venue, which is perfectly situated in the centre of Greater
+            Noida West, embodies sophistication and rich cultural diversity. We
+            cordially invite you to enjoy a unique fusion of luxury and
+            tradition, complete with warm hospitality and exquisite details.
+            Aarambh offers a straightforward yet magical trip filled with joy
+            and celebration, whether it&apos;s for a visit or a special
+            occasion.
+          </p>
+          <ScrollTrigger onEnter={() => setCounterOn(true)}>
+            <div className="flex max-md:flex-col py-14 gap-8 justify-evenly">
+              <Count
+                count={
+                  counterOn && (
+                    <CountUp
+                      style={{
+                        fontFamily: 'Playfair Display',
+                        fontWeight: 'bold',
+                      }}
+                      start={0}
+                      end={100}
+                      duration={2}
+                    />
+                  )
+                }
+                label={'Events'}
+              />
+              <div className="w-[1px] bg-secondary"></div>
+              <Count
+                count={
+                  counterOn && (
+                    <CountUp
+                      style={{
+                        fontFamily: 'Playfair Display',
+                        fontWeight: 'bold',
+                      }}
+                      start={0}
+                      end={80}
+                      duration={2}
+                    />
+                  )
+                }
+                label={'Birthdays'}
+              />
+              <div className="w-[1px] bg-secondary"></div>
+              <Count
+                count={
+                  counterOn && (
+                    <CountUp
+                      style={{
+                        fontFamily: 'Playfair Display',
+                        fontWeight: 'bold',
+                      }}
+                      start={0}
+                      end={300}
+                      duration={2}
+                    />
+                  )
+                }
+                label={'Parties'}
+              />
             </div>
-          </div>
-          <div className="flex items-center">
-            <div>
-              <p className="text-3xl font-bold pb-2 text-primary">Visit Us</p>
-              <p>
-                Plot No. - 362, Milak Lachchhi, Greater Noida, Milak Lachhi,
-                Uttar Pradesh 203207
-              </p>
-            </div>
-          </div>
+          </ScrollTrigger>
         </div>
       </div>
 
-      {/* Welcome Section */}
-      <div data-aos="fade-up">
-        <div className="lg:p-24 max-lg:p-6 md:px-14 max-lg:py-28 flex justify-center items-center flex-col">
-          <p className="uppercase max-md:text-center text-4xl">
-            welcome to aarambh
-          </p>
-          <div className="flex justify-center w-full py-4 pb-7">
-            <div className="h-[1px] bg-primary lg:w-[30%]"></div>
+      {/* Capacity Section */}
+      <div className="relative">
+        <div className="pattern"></div>
+        <div className="bg-[#685044] p-10 py-20">
+          <h2 className="text-center text-3xl lg:text-5xl text-white font-bold lg:p-5">
+            Capacity of Halls
+          </h2>
+          <div className="flex justify-center">
+            <img
+              src={Bar}
+              className="md:w-[25%] w-[70%] mt-2 md:-mt-3"
+              alt=""
+            />
           </div>
-          <p className="lg:px-44 text-lg text-center">
-            Aarambh, where timeless tradition meets modern luxury. With 30 cozy
-            executive rooms, our venue offers a haven of comfort. Elevate your
-            celebrations in our three versatile banquet halls, hosting up to
-            2500 guests. Nestled in the heart of Greater Noida West, our space
-            captures the essence of cultural richness and sophistication. From
-            warm hospitality to exquisite details, we invite you to experience a
-            blend of tradition and luxury like never before. Whether for a stay
-            or a special event, Aarambh promises a simple yet enchanting journey
-            of celebration and joy.
-          </p>
+          <div className="flex max-md:flex-col z-10 max-md:items-center gap-10 py-14 justify-evenly">
+            <FacilityCard img={Hall1} label={'Hall 1'} count={'600'} />
+            <FacilityCard img={Hall2} label={'Hall 2'} count={'500'} />
+            <FacilityCard img={Hall3} label={'Hall 3'} count={'300'} />
+            <FacilityCard img={Terrace} label={'Terrace'} count={'150'} />
+          </div>
         </div>
       </div>
 
       <span id="service"></span>
-      {/* Services Section */}
-      <div data-aos="fade-up">
-        <div className="p-10 lg:bg-light rounded-t-[50px] lg:mx-[370px] flex max-md:flex-col justify-center items-center flex-col">
-          <p className="text-4xl">Our Services</p>
-          <div className="flex lg:justify-center w-full py-4">
-            <div className="h-[0.5px] bg-primary w-full lg:w-[12%]"></div>
+      {/* Our Services Section */}
+      <div>
+        <div className="p-10">
+          <h2 className="text-center py-10 text-3xl lg:text-5xl text-secondary font-bold lg:p-5">
+            Our Sevices
+          </h2>
+          <div className="flex max-md:-mt-6 justify-center">
+            <img
+              src={Bar}
+              className="md:w-[25%] w-[70%] max-md:-mt-2 -mt-3"
+              alt=""
+            />
           </div>
-        </div>
-        <div className="flex flex-col md:px-10 gap-14">
-          <EventCard
-            img={Img1}
-            title={'Weddings'}
-            desc={
-              'One of the most special moments for any person is their wedding day. We know how much pressure and stress this may bring for some couples. Therefore, we have come up with the best processes and perfected our system in order to make this process easy and enjoyable. Let us guide you through all of your choice and give you advice along the way. Some of the most unique and unforgettable weddings have taken place at Aurora. Scroll through our wedding gallery below and take your time looking through every detail.'
-            }
-          />
-          <EventCard
-            img={Img2}
-            side={'x'}
-            title={'Birthdays'}
-            desc={
-              'Another year gone, a new chapter begins. Whether you are celebrating a sweet 16 or a 50th birthday we know exactly how to accommodate such events. Your guests will feel at home with the warm treatment of our servers and the many food options available. Have a blast this is your day to let go and have fun with friends and family. One thing is a given, that you will make memories and remember this for the rest of your life. See our previous birthday parties below and how others have made Aurora the venue of their choice.'
-            }
-          />
-          <EventCard
-            img={Img3}
-            title={'Miscellaneous Events'}
-            desc={
-              'Another year gone, a new chapter begins. Whether you are celebrating a sweet 16 or a 50th birthday we know exactly how to accommodate such events. Your guests will feel at home with the warm treatment of our servers and the many food options available. Have a blast this is your day to let go and have fun with friends and family. One thing is a given, that you will make memories and remember this for the rest of your life. See our previous birthday parties below and how others have made Aurora the venue of their choice.'
-            }
-          />
+          <div className="flex max-md:flex-col mt-8 justify-evenly">
+            <ServiceCard
+              desc={
+                'Celebrate your special day in style with our exquisite wedding and party services.'
+              }
+              img={Img4}
+              title={'Weddings & Reception'}
+            />
+
+            <ServiceCard
+              desc={
+                'Host successful corporate gatherings with our professional event planning.'
+              }
+              img={Img5}
+              title={'Corporate Events'}
+            />
+            <ServiceCard
+              desc={
+                'Make birthdays unforgettable with our tailored celebration packages.'
+              }
+              img={Img7}
+              title={'Birthday Celebrations'}
+            />
+          </div>
         </div>
       </div>
 
       <span id="highlight"></span>
-      {/* Hotel Facilities  */}
-      <div
-        data-aos="fade-up"
-        className="py-10 mt-24 bg-light lg:mx-32 rounded-xl"
-      >
-        <div className="p-10 flex justify-center max-md:flex-col items-center flex-col">
-          <p className="text-4xl ">Highlights</p>
-          <div className="flex justify-center w-full py-4">
-            <div className="h-[0.5px] bg-primary w-[40%] lg:w-[10%]"></div>
-          </div>
-        </div>
-        <div className="lg:px-24 md:px-20 px-10 grid lg:grid-cols-2 gap-y-14 gap-10">
-          <Facility
-            title={'Free Parking Space'}
-            desc={
-              'Park with peace of mind during your stay with our complimentary Free Parking Space.'
-            }
-          />
-          <Facility
-            title={'Room Service'}
-            desc={
-              'Elevate your stay with the convenience of our exceptional Room Service, where delectable dishes and attentive hospitality are just a call away.'
-            }
-          />
-          <Facility
-            title={'Free Wi-Fi'}
-            desc={
-              'Experience the convenience of constant connectivity with our included Free Wi-Fi, ensuring seamless browsing and connectivity throughout your stay.'
-            }
-          />
-          <Facility
-            title={'Culinary Dining Experience'}
-            desc={
-              'Discover the best of Indian flavours—savor aromatic, flavourful dishes paired with a variety of beverages for an unforgettable dining experience'
-            }
-          />
-          <Facility
-            title={'Modern Conference Spaces'}
-            desc={
-              'Versatile spaces designed for corporate gatherings, conferences, and seminars, ensuring a seamless and professional experience.'
-            }
-          />
-          <Facility
-            title={'In-room entertainment'}
-            desc={
-              'Enjoy in-room entertainment with cable television and stay connected with complimentary Wi-Fi to ensure an enjoyable experience.'
-            }
-          />
-        </div>
-      </div>
+      {/* Highlights */}
+      <Highlights />
 
+      {/* Gallery */}
       <span id="gallery"></span>
       {/* Gallery Section */}
       <div data-aos="fade-up" className="lg:py-20 md:px-10 max-lg:py-10">
-        <div className="pt-16 flex justify-center items-center flex-col">
-          <p className="text-4xl">Photo Gallery</p>
-          <div className="flex justify-center w-full py-4">
-            <div className="h-[0.5px] bg-primary lg:w-[12%]"></div>
-          </div>
+        <h2 className="text-center text-3xl lg:text-5xl text-secondary font-bold lg:p-5">
+          Photo Gallery
+        </h2>
+        <div className="flex justify-center">
+          <img src={Bar} className="md:w-[25%] w-[70%] mt-2 md:-mt-3" alt="" />
         </div>
-        <div>
+        <div className="max-md:mt-8">
           <div className="grid lg:grid-cols-3 lg:px-32 max-md:px-4 gap-5 py-2 lg:py-10">
             <img
               className="hover:scale-[1.05] duration-500 transition-all"
-              src={Img1}
+              src={Img5}
               width={'100%'}
               alt=""
             />
@@ -295,17 +303,33 @@ const HomePage = () => {
         </div>
       </div>
 
+      {/* Testimonials */}
+      <Testimonials />
+
       <span id="contact"></span>
-      <div data-aos="fade-up" className="pb-10 md:px-12 max-lg:py-20">
+      <div data-aos="fade-up" className="pb-10 md:px-12 max-lg:py-20 lg:mt-10">
         <div className="lg:pb-10 flex justify-center max-md:flex-col items-center flex-col">
-          <p className="text-4xl">Get in Touch</p>
-          <div className="flex justify-center w-full py-3 lg:py-4">
-            <div className="h-[0.5px] bg-primary w-[40%] lg:w-[12%]"></div>
+          <h2 className="text-center py-10 text-3xl lg:text-5xl text-secondary font-bold lg:p-5">
+            Get in Touch
+          </h2>
+          <div className="flex max-md:-mt-6 justify-center">
+            <img
+              src={Bar}
+              className="md:w-[25%] w-[70%] max-md:-mt-2 -mt-3"
+              alt=""
+            />
           </div>
         </div>
-        <div className="flex max-lg:flex-col gap-14 lg:px-32 w-full">
+        <div className="flex max-lg:flex-col gap-14 mt-8 lg:px-32 w-full">
           <div className="flex lg:w-[60%] max-md:px-5 justify-center max-lg:items-center flex-col gap-5">
-            <p className="text-3xl max-md:pt-10">Address</p>
+            <p
+              style={{
+                fontFamily: 'Playfair Display',
+              }}
+              className="text-3xl max-md:pt-10"
+            >
+              Address
+            </p>
             <p className="max-lg:text-center">
               For any queries or bookings, please feel free to contact us at the
               following details:
@@ -317,8 +341,11 @@ const HomePage = () => {
               Email: <strong>aarambh.bh@gmail.com</strong>
             </p>
             <p className="max-md:text-center">
-              Plot No. - 362, Milak Lachchhi, Greater Noida, Milak Lachhi, Uttar
-              Pradesh 203207
+              Address:{' '}
+              <strong>
+                Aarambh Hotel & Banquet, TechZone-VII, Greater Noida, Uttar
+                Pradesh 203207
+              </strong>
             </p>
           </div>
           <iframe
@@ -332,43 +359,82 @@ const HomePage = () => {
           ></iframe>
         </div>
       </div>
+
+      <span id="book"></span>
+      {/* Book Section */}
+      <BookEvent />
     </div>
   )
 }
 
 export default HomePage
 
-const Facility = ({ title, desc }) => {
+const Count = ({ count, label }) => {
   return (
-    <div>
-      <div className="flex items-center">
-        <div>
-          <p className="text-3xl font-bold pb-2 text-primary">{title}</p>
-          <p>{desc}</p>
-        </div>
-      </div>
+    <div className="flex flex-col justify-center items-center">
+      <p
+        style={{ fontFamily: 'Playfair Display' }}
+        className="text-5xl tracking-wider font-extrabold text-secondary"
+      >
+        {count}+
+      </p>
+      <p className="text-xl py-1 font-semibold">{label}</p>
     </div>
   )
 }
 
-const EventCard = ({ side, title, desc, img }) => {
+const FacilityCard = ({ label, count, img }) => {
   return (
-    <div
-      data-aos="fade-up"
-      className={`flex ${
-        side && 'flex-row-reverse'
-      } lg:p-10 max-md:flex-col md:gap-10 gap-32 max-md:gap-5 lg:px-32 justify-center items-center`}
-    >
-      <div>
-        <p className="text-5xl max-md:text-center py-1 text-primary">{title}</p>
-        <p className="max-md:px-4">{desc}</p>
+    <div className="bg-white p-5 shadow-lg rounded-lg max-md:w-[340px] w-[280px] py-10">
+      <p
+        style={{ fontFamily: 'Playfair Display' }}
+        className="text-center pb-2 text-3xl text-secondary font-bold"
+      >
+        {label}
+      </p>
+      <div className="flex justify-center">
+        <img className="w-[50%]" src={img} alt="" />
       </div>
-      <div className="max-md:p-2">
-        <img
-          src={img}
-          className="lg:border-4 rounded-md border-primary"
-          alt="image"
-        />
+      <p className="py-2 text-center">
+        {' '}
+        Capacity :{' '}
+        <span
+          style={{ fontFamily: 'Playfair Display' }}
+          className="font-semibold text-xl"
+        >
+          {count}+
+        </span>
+      </p>
+    </div>
+  )
+}
+
+const ServiceCard = ({ img, title, desc }) => {
+  return (
+    <div className="w-[400px] mt-7 relative overflow-hidden max-md:w-[320px] h-[300px] rounded-xl">
+      <div>
+        <img className="rounded-t-xl" src={img} alt="" />
+      </div>
+      <div className="bg-gradient-to-br -mt-6 lg:-mt-14 -ml-12 lg:ml-5 h-[400px] lg:w-[420px] w-[400px] from-10% to-90% -rotate-[9deg] lg:-rotate-[11deg] from-primary to-secondary p-3 rounded-xl"></div>
+      <div className="absolute bottom-0 z-10 p-4">
+        <div className="flex justify-end">
+          <p className=" text-sm font-semibold lg:w-[80%] text-right py-3">
+            {desc}
+          </p>
+        </div>
+        <div className="flex justify-between items-center">
+          <p
+            style={{
+              fontFamily: 'Playfair Display',
+            }}
+            className="text-lg font-bold"
+          >
+            {title}
+          </p>
+          <button className="underline text-sm font-bold text-white bg-transparent">
+            Book Now
+          </button>
+        </div>
       </div>
     </div>
   )

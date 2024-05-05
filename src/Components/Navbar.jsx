@@ -1,6 +1,8 @@
 import { useEffect, useRef, useState } from 'react'
 import '../App.css'
 import Logo from '../assets/logo.png'
+import 'animate.css'
+
 const Navbar = () => {
   const [visible, setVisible] = useState(true)
   const headerRef = useRef(null)
@@ -20,7 +22,6 @@ const Navbar = () => {
   }, [prevScrollPos])
 
   const [IsOpen, setIsOpen] = useState(false)
-  console.log(IsOpen)
 
   const scrollToSection = async (myScrollToElement) => {
     const target = document.getElementById(myScrollToElement)
@@ -52,12 +53,16 @@ const Navbar = () => {
       >
         <div className="pattern"></div>
         <div
-          className="cursor-pointer z-10 flex items-center gap-3"
+          className="cursor-pointer animate__animated animate__slideInLeft z-10 flex items-center gap-3"
           onClick={() => {
             window.scrollTo({ top: 0, behavior: 'smooth' })
           }}
         >
-          <img src={Logo} className="w-[50px] md:mr-2" alt="" />
+          <img
+            src={Logo}
+            className="w-[50px] animate__animated animate__rotateIn md:mr-2"
+            alt=""
+          />
           <div>
             <p className="text-[#f8be7e] font-[Alegreya] text-xl md:text-2xl font-extrabold">
               Aarambh
@@ -72,7 +77,7 @@ const Navbar = () => {
         </div>
         <div
           style={{ fontFamily: 'Playfair Display' }}
-          className="flex z-10 max-sm:hidden justify-center gap-7 text-lg font-extrabold text-primary"
+          className="flex z-10 animate__animated animate__slideInRight   max-sm:hidden justify-center gap-7 text-lg font-extrabold text-primary"
         >
           {/* <div
             onClick={() => {

@@ -37,8 +37,9 @@
   font-style: normal;
 }
 
-
-
+h2{
+  font-family: playfair display;
+}
 
 .pattern {
   position: absolute;
@@ -47,7 +48,7 @@
   bottom: 0;
   width: 100%;
   background-image: url('/src/assets/4909528.jpg'); /* Use your custom pattern image */
-  opacity: 0.1; 
+  opacity: 0.05; 
   z-index: 2; /* Ensure pattern sits above the gradient overlay */
 }
 
