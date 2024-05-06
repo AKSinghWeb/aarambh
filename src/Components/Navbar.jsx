@@ -47,9 +47,8 @@ const Navbar = () => {
     <>
       <div
         ref={headerRef}
-        className={`relative flex lg:px-32 top-0 w-full p-1 bg-[#685044] px-4 md:px-16 items-center justify-between transition-all duration-300 ease-in-out ${
-          visible ? '' : 'opacity-0 transform translate-y-[-100%]'
-        }`}
+        className={`relative flex lg:px-32 top-0 w-full p-1 bg-[#685044] px-4 md:px-16 items-center justify-between transition-all duration-300 ease-in-out ${visible ? '' : 'opacity-0 transform translate-y-[-100%]'
+          }`}
       >
         <div className="pattern"></div>
         <div
@@ -93,7 +92,7 @@ const Navbar = () => {
             className="group cursor-pointer"
           >
             <p style={{ fontFamily: 'Playfair Display' }} className="font-bold">
-              Book
+              Enquire Now
             </p>
             <div className="group-hover:w-full bg-primary w-0 transition-all duration-400 h-[1px]"></div>
           </div>
@@ -170,7 +169,7 @@ const Navbar = () => {
           {IsOpen && (
             <div
               className="md:hidden nav-menu absolute top-[50px] right-[10px] ml-44 border border-white text-white p-7 py-3 mr-10 bg-black"
-              // ref={menuRef}
+            // ref={menuRef}
             >
               {/* <div
                 onClick={() => {
@@ -208,7 +207,7 @@ const Navbar = () => {
                   className="font-bold"
                   style={{ fontFamily: 'Playfair Display' }}
                 >
-                  Book
+                  Enquire Now
                 </p>
                 <div className="group-hover:w-full bg-primary w-0 transition-all duration-400 h-[1px]"></div>
               </div>

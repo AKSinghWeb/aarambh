@@ -29,6 +29,16 @@ const HomePage = () => {
     })
   }, [])
 
+  const scrollToSection = async (myScrollToElement) => {
+    const target = document.getElementById(myScrollToElement)
+    if (target) {
+      target.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start',
+      })
+    }
+  }
+
   return (
     <div>
       {/* Hero Section  */}
@@ -43,12 +53,6 @@ const HomePage = () => {
           <p className="text-[100px] md:text-[70px] md:pb-7 font-[Alegreya] font-bold max-md:font-extrabold max-md:pb-5 max-md:text-2xl z-[2] relative ">
             AARAMBH Hotel & Banquet
           </p>
-          {/* <p
-            style={{ fontFamily: 'Gilda Display' }}
-            className="lg:text-4xl max-md:text-xl font-extrabold lg:mt-[-25px]"
-          >
-            Hotel and Banquet
-          </p> */}
 
           {/* CTA Button */}
           <div className="flex max-md:mt-12 justify-center gap-4 ">
@@ -56,7 +60,7 @@ const HomePage = () => {
               onClick={() => {
                 window.open('https://wa.me/918287181002', '_blank')
               }}
-              className="bg-primary max-md:text-xs hover:scale-[1.1] transition-all duration-300 w-[110px] md:w-40 flex justify-center items-center gap-2 border border-[#7f5741] text-[#7f5741] md:px-5 py-2 font-bold rounded-lg md:text-lg"
+              className="bg-primary max-md:text-xs hover:scale-[1.1] transition-all duration-300 w-[120px] md:w-44 flex justify-center items-center gap-2 border border-[#7f5741] text-[#7f5741] md:px-5 py-2 font-bold rounded-lg md:text-lg"
             >
               Call Now{' '}
               <svg
@@ -81,9 +85,9 @@ const HomePage = () => {
                   behavior: 'smooth',
                 })
               }}
-              className="bg-secondary max-md:text-xs hover:scale-[1.1] transition-all duration-300 w-[110px] md:w-40 flex justify-center items-center gap-2 border border-primary text-primary md:px-5 py-2 font-bold rounded-lg md:text-lg"
+              className="bg-secondary max-md:text-xs hover:scale-[1.1] transition-all duration-300 w-[120px] md:w-44 flex justify-center items-center gap-2 border border-primary text-primary md:px-5 py-2 font-bold rounded-lg md:text-lg"
             >
-              Book Event
+              Enquire Now
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="16"
@@ -221,7 +225,7 @@ const HomePage = () => {
             />
           </div>
           <div className="flex max-md:flex-col mt-8 justify-evenly">
-            <ServiceCard
+            <ServiceCard onClick={() => scrollToSection('book')}
               desc={
                 'Celebrate your special day in style with our exquisite wedding and party services.'
               }
@@ -229,14 +233,14 @@ const HomePage = () => {
               title={'Weddings & Reception'}
             />
 
-            <ServiceCard
+            <ServiceCard onClick={() => scrollToSection('book')}
               desc={
                 'Host successful corporate gatherings with our professional event planning.'
               }
               img={Img5}
               title={'Corporate Events'}
             />
-            <ServiceCard
+            <ServiceCard onClick={() => scrollToSection('book')}
               desc={
                 'Make birthdays unforgettable with our tailored celebration packages.'
               }
@@ -385,7 +389,7 @@ const Count = ({ count, label }) => {
 
 const FacilityCard = ({ label, count, img }) => {
   return (
-    <div className="bg-white p-5 shadow-lg rounded-lg max-md:w-[340px] w-[280px] py-10">
+    <div className="bg-white hover:scale-[1.03] transition-all duration-200 relative z-[5] p-5 shadow-lg rounded-lg max-md:w-[340px] w-[280px] py-10">
       <p
         style={{ fontFamily: 'Playfair Display' }}
         className="text-center pb-2 text-3xl text-secondary font-bold"
@@ -409,9 +413,9 @@ const FacilityCard = ({ label, count, img }) => {
   )
 }
 
-const ServiceCard = ({ img, title, desc }) => {
+const ServiceCard = ({ img, title, desc, onClick }) => {
   return (
-    <div className="w-[400px] mt-7 relative overflow-hidden max-md:w-[320px] h-[300px] rounded-xl">
+    <div className="w-[400px] hover:scale-[1.03] transition-all duration-200 mt-7 relative overflow-hidden max-md:w-[320px] h-[300px] rounded-xl">
       <div>
         <img className="rounded-t-xl" src={img} alt="" />
       </div>
@@ -431,8 +435,8 @@ const ServiceCard = ({ img, title, desc }) => {
           >
             {title}
           </p>
-          <button className="underline text-sm font-bold text-white bg-transparent">
-            Book Now
+          <button onClick={onClick} className="underline text-sm font-bold text-white bg-transparent">
+            Enquire Now
           </button>
         </div>
       </div>

@@ -51,9 +51,9 @@ const Highlights = () => {
           <img src={Bar} className="md:w-[25%] w-[70%] mt-2 md:-mt-3" alt="" />
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 px-5 mt-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 px-5 mt-8">
           {highlights.map((highlight, index) => (
-            <div key={index} className="bg-white p-5 rounded-lg shadow-lg">
+            <div key={index} className="bg-white hover:scale-[1.03] transition-all duration-200 relative z-[5] p-5 rounded-lg shadow-lg">
               <div className="mb-2">
                 <img className="w-12" src={highlight.icon} alt="" />
               </div>

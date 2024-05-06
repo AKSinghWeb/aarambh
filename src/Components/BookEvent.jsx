@@ -90,7 +90,7 @@ const BookEvent = () => {
     >
       <div className="pattern"></div>
       <h2 className="text-center text-3xl lg:text-5xl text-white font-bold lg:p-5">
-        Book Your Event
+        Enquire Now
       </h2>
       <div className="flex justify-center">
         <img src={Bar} className="md:w-[25%] w-[70%] mt-2 md:-mt-3" alt="" />
@@ -149,9 +149,8 @@ const BookEvent = () => {
           ></textarea>
           <button
             type="submit"
-            className={`bg-primary text-white font-bold border border-slate-800 p-2 rounded-md ${
-              isSubmitting ? 'cursor-not-allowed' : 'cursor-pointer'
-            }`}
+            className={`bg-primary text-white font-bold p-2 rounded-md ${isSubmitting ? 'cursor-not-allowed' : 'cursor-pointer'
+              }`}
           >
             {isSubmitting ? 'Submitting...' : 'Submit'}
           </button>
