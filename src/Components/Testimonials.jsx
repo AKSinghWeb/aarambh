@@ -58,7 +58,7 @@ const Testimonials = () => {
         <div className="flex justify-center">
           <img src={Bar} className="md:w-[25%] w-[70%] mt-2 md:-mt-3" alt="" />
         </div>
-        <div className="max-md:hidden mt-8">
+        <div className="max-md:hidden relative z-[5] mt-8">
           <Swiper
             slidesPerView={3}
             spaceBetween={30}
@@ -69,7 +69,7 @@ const Testimonials = () => {
             rewind={true}
             autoplay={{
               delay: 3000,
-              disableOnInteraction: true,
+              disableOnInteraction: false,
             }}
             navigation={true}
             modules={[Autoplay, Pagination, Navigation]}
