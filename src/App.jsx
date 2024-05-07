@@ -33,6 +33,7 @@ const App = () => {
           )}
           <Footer />
           {/* Book event tooltip along with animation */}
+
           {!iseModalOpen && (
             <div
               onClick={() => {
@@ -45,6 +46,7 @@ const App = () => {
                 <p className='text-lg text-primary font-bold mx-4'>
                   Contact now
                 </p>
+
 
                 {/* <div className="bg-slate-900 text-white p-2 rounded-full flex items-center justify-center"> */}
                 <img src={WhatsApp} alt='whatsapp' className='w-8 h-8' />
